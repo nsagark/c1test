@@ -5,7 +5,7 @@ metadata:
 spec:
   background: true
   rules:
-  - name: baseline
+  - name: restricted
     match:
       any:
       - resources:
@@ -14,9 +14,9 @@ spec:
     validate:
       failureAction: Audit
       podSecurity:
-        level: baseline
+        level: restricted
         version: latest
         exclude:
-        - controlName: Host Namespaces
+        - controlName: Running as Non-root
           images:
           - nginx*
