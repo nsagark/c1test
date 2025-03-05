@@ -12,9 +12,9 @@ spec:
           kinds:
           - Pod
     validate:
-      failureAction: Enforce
+      failureAction: Audit
       podSecurity:
         level: baseline
         version: latest
-        exclude:
-        - controlName: Host Namespaces
+        # exclude:
+        # - controlName: Host Namespaces
