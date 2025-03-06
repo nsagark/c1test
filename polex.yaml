@@ -17,18 +17,15 @@ spec:
     - controlName: Running as Non-root
       images:
         - nginx*
-    - controlName: Privileged
+    - controlName: Privilege Escalation
       images:
         - nginx*
-    - controlName: HostPID
+    - controlName: Running as Non-root user
       images:
         - nginx*
-    - controlName: HostIPC
+    - controlName: Seccomp
       images:
         - nginx*
-    - controlName: HostNetwork
-      images:
-        - nginx*
-    - controlName: RunAsUser
+    - controlName: Capabilities
       images:
         - nginx*
