@@ -1,0 +1,34 @@
+apiVersion: kyverno.io/v2beta1
+kind: PolicyException
+metadata:
+  name: pod-security-exception
+  namespace: kyverno
+spec:
+  exceptions:
+  - policyName: psa
+    ruleNames:
+    - restricted
+  match:
+    any:
+    - resources:
+        namespaces:
+        - mytest
+  podSecurity:
+    - controlName: Running as Non-root
+      images:
+        - nginx*
+    - controlName: Privileged
+      images:
+        - nginx*
+    - controlName: HostPID
+      images:
+        - nginx*
+    - controlName: HostIPC
+      images:
+        - nginx*
+    - controlName: HostNetwork
+      images:
+        - nginx*
+    - controlName: RunAsUser
+      images:
+        - nginx*
